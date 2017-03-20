@@ -34,14 +34,14 @@ Driver Description:
 
 ////////////////////////////////////////////////
 /* 0 is the startup screen Drivers Skills     */
-/* 1 is the Programming Skills              	*/
-/* 2 is the Red Left Program              	  */
-/* 3 is the Red Right Program							    */
-/* 4 is the Blue Left Program            	    */
-/* 5 is the Blue Right Program						    */
+/* 1 is the Programming Skills                */
+/* 2 is the Red Left Program           	      */
+/* 3 is the Red Right Program		      */
+/* 4 is the Blue Left Program                 */
+/* 5 is the Blue Right Program		      */
 ////////////////////////////////////////////////
-/* 0 is Tank Driver Control										*/
-/* 1 is Arcade Driver Control									*/
+/* 0 is Tank Driver Control		      */
+/* 1 is Arcade Driver Control		      */
 ////////////////////////////////////////////////
 
 /*+++++++++++++++++++++++++++++++++++++++++++++| Notes |++++++++++++++++++++++++++++++++++++++++++++++
@@ -51,11 +51,11 @@ NOTES:
 1)	Driver Control:
 a.		Tank Control:
 I.			Ch2 controls right drive
-II.  		Ch3 controls left drive.
+II.  			Ch3 controls left drive.
 b.		Arcade Control:
 I.			Ch1 controls Point Turning Right And Left
-II.  		Ch3 controls Foward And Backward movement
-III.		Ch4 controls Strafing Left And Right
+II.  			Ch3 controls Foward And Backward movement
+III.			Ch4 controls Strafing Left And Right
 2)	Lift Control
 a.		Btn5U moves the lift up
 b.		Btn5D moves the lift up
@@ -71,27 +71,27 @@ b.		Btn8L strafes left slowly
 c.		Btn8R strafes right slowly
 d.		Btn8D moves backward slowly
 
-[I/O Port]          [Name]              		 [Type]                [Description]
+[I/O Port]          [Name]                   [Type]                [Description]
 ------------------------------------------------------------------------------------------
 Motor Port 2        frontRightMotor          VEX 393 Motor         Front Right Motor
 Motor Port 3        backRightMotor           VEX 393 Motor         Back Right Motor
 Motor Port 4        frontLeftMotor           VEX 393 Motor         Front Left Motor
 Motor Port 5        backLeftMotor            VEX 393 Motor         Back Left Motor
-Motor Port 6        leftLift             		 VEX 393 Motor         Left Lift Motor (Dual Motors)
-Motor Port 7        rightLift             	 VEX 393 Motor         Right Lift Motor (Dual Motors)
-Motor Port 8				conveyorMotor						 VEX 393 Motor				 Conveyor Belt Motor
+Motor Port 6        leftLift                 VEX 393 Motor         Left Lift Motor (Dual Motors)
+Motor Port 7        rightLift                VEX 393 Motor         Right Lift Motor (Dual Motors)
+Motor Port 8	    conveyorMotor	     VEX 393 Motor	   Conveyor Belt Motor
 ///////////////////////////////////////////////////////////////////////////////////////////
-Analog Port 1				lineTracker							 Line Follower				 Track and follow the white line
-Digital Port 1			clawPiston							 Pnuematic Solenoid		 Used to open and close claw
-Digital Port 2			flippyPiston						 Pnuematic Solenoid		 Used to flip out the claw
+Analog Port 1	    lineTracker		     Line Follower	   Track and follow the white line
+Digital Port 1	    clawPiston		     Pnuematic Solenoid	   Used to open and close claw
+Digital Port 2	    flippyPiston	     Pnuematic Solenoid    Used to flip out the claw
 ///////////////////////////////////////////////////////////////////////////////////////////
-UART2								Vex LCD Display					 UART1								 Vex LCD Display
-I2C_1			        	frontLeftMotor       	 	 IEM         	 				 Measure how much the frontLeftMotor rotates
-I2C_2				        backLeftMotor            IEM         	 				 Measure how much the backLeftMotor rotates
-I2C_3			        	leftLift				       	 IEM         	 				 Measure left lift encoder counts
-I2C_4				        rightLift			           IEM         	 				 Measure right lift encoder counts
-I2C_5								backRightMotor					 IEM									 Measure how much the backRightMotor rotates
-I2C_6								frontRightMotor					 IEM									 Measure how much the frontRightMotor rotates
+UART2		    Vex LCD Display	     UART1		   Vex LCD Display
+I2C_1       	    frontLeftMotor           IEM         	   Measure how much the frontLeftMotor rotates
+I2C_2		    backLeftMotor            IEM         	   Measure how much the backLeftMotor rotates
+I2C_3		    leftLift		     IEM         	   Measure left lift encoder counts
+I2C_4		    rightLift		     IEM         	   Measure right lift encoder counts
+I2C_5		    backRightMotor	     IEM		   Measure how much the backRightMotor rotates
+I2C_6		    frontRightMotor	     IEM		   Measure how much the frontRightMotor rotates
 ----------------------------------------------------------------------------------------------------*/
 
 /*++++++++++++++++++++++++++++++++++++++++++++|Variables|++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -135,7 +135,6 @@ void batteryPower()//Display Battery power during Autonomous and preAuton
 
 		sprintf(mainBattery, "%1.2f%c", nImmediateBatteryLevel/1000.0,'V'); //Build the value to be displayed
 		displayLCDString(1, 0, mainBattery);//Display the Primary battery level
-
 
 		sprintf(backupBattery, "%1.2f%c", BackupBatteryLevel/1000.0,'V'); //Build the value to be displayed
 		displayLCDString(1, 11, backupBattery);//Display the Backup battery level
